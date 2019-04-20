@@ -27,3 +27,5 @@ target/ssmbase/WEB-INF/lib/spring-jdbc-5.1.0.RELEASE.jar
 target/ssmbase/WEB-INF/lib/spring-jcl-5.1.0.RELEASE.jar
 target/ssmbase/WEB-INF/lib/spring-expression-5.1.0.RELEASE.jar
 target/ssmbase/WEB-INF/classes/spring-mvc.xml
+/.idea/
+target/generated-sources/
