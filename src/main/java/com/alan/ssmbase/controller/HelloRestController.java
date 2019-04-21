@@ -1,8 +1,8 @@
 package com.alan.ssmbase.controller;
 
-import org.springframework.stereotype.Controller;
+import com.alan.ssmbase.service.SysUsersService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/rest")
 public class HelloRestController {
+    @Autowired
+    private SysUsersService sysUsersService;
 
     @RequestMapping("/hello")
     public  String restHello(){
-        return  "aa";
+        return  sysUsersService.get(111);
     }
 }

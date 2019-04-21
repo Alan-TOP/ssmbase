@@ -29,3 +29,5 @@ target/ssmbase/WEB-INF/lib/spring-expression-5.1.0.RELEASE.jar
 target/ssmbase/WEB-INF/classes/spring-mvc.xml
 /.idea/
 target/generated-sources/
+/target/
+target/ssmbase/WEB-INF/classes/com/alan/ssmbase/dao/
