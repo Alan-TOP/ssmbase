@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--用户编写额外的一些配置属性-->
+    <!--读取properties配置文件
+    方式一：    用途1：Spring的xml配置文件中，可以通过${属性名}使用properties文件配置的值
+	            用途2：可以使用@Value("${属性名}")注解读取properties文件配置的值，再给字段赋值
+	                    方法1：注解在字段上，给字段赋值
+	                   方法2：注解在字段的setter方法中赋值
+                <context:property-placeholder location="classpath:jdbc.properties"/>
+    方式二：    <bean id="propertyConfigurer"
+                      class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+                      <property name="location">
+                          <value>/WEB-INF/configs/sqlServer.properties</value>
+                      </property>
+                </bean>
+    方式三：重写PropertyPlaceholderConfigurer（具体可网上详细搜索）
+    -->
+    <bean id="propertyConfigurer" class="com.alan.ssmbase.utils.PropertyPlaceholder">
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:config/sysConfig.properties</value>
+                <!--<value>classpath*:*.config.properties</value>
+                <value>file:./jdbc.properties</value>
+                <value>file:./module.config.properties</value>-->
+            </list>
+        </property>
+    </bean>
+</beans>

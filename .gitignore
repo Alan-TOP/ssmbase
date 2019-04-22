@@ -31,3 +31,4 @@ target/ssmbase/WEB-INF/classes/spring-mvc.xml
 target/generated-sources/
 /target/
 target/ssmbase/WEB-INF/classes/com/alan/ssmbase/dao/
+/ssmbase.iml

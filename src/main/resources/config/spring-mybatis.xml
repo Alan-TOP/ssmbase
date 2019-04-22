@@ -8,7 +8,8 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/tx
-                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           ">
 
     <!--加载配置文件-->
     <context:property-placeholder location="classpath:config/jdbc.properties"/>
@@ -32,26 +33,19 @@
     <!--spring和mybatis整合-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.**.model"/>
+        <property name="typeAliasesPackage" value="com.alan.ssmbase.model"/>
         <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
         <!--<property name="configLocation" value="classpath:config/mybatis-config.xml"/>-->
     </bean>
-
     <!--扫描mapper接口包-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.alan.ssmbase.mapper"/>
-        <property name="sqlSessionFactoryBeanName" >
-            <idref bean="sqlSessionFactory"/>
-        </property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
-
-
 
     <!--事务管理-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
-    <tx:annotation-driven transaction-manager="transactionManager" />
-
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

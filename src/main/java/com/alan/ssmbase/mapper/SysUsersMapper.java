@@ -1,13 +1,9 @@
 package com.alan.ssmbase.mapper;
 
 import com.alan.ssmbase.model.SysUsers;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
-@Repository
-@Mapper
 public interface SysUsersMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(int id);
 
     int insert(SysUsers record);
 
