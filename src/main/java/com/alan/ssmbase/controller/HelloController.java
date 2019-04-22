@@ -6,6 +6,8 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @description:
  * @author: Alan
@@ -16,7 +18,7 @@ public class HelloController {
     Logger logger = Logger.getLogger(HelloController.class);
 
     @RequestMapping("/hello")
-    public String hello(HttpRequest request){
+    public String hello(HttpServletRequest request){
         logger.info("hello 好的");
 
         return "hello";
