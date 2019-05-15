@@ -38,7 +38,7 @@ public class HttpUtils {
      * @return 响应对象
      * @throws IOException
      */
-    public HttpResponse sendGet(String urlString) throws IOException {
+    public  HttpResponse sendGet(String urlString) throws IOException {
         cookies.clear();
         return this.send(urlString, "GET", null, null);
     }

@@ -2,6 +2,8 @@ package com.alan.ssmbase.controller;
 
 import com.alan.ssmbase.model.SysUsers;
 import com.alan.ssmbase.service.SysUsersService;
+import com.alan.ssmbase.utils.HttpResponse;
+import com.alan.ssmbase.utils.HttpUtils;
 import com.alan.ssmbase.utils.PropertyPlaceholder;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,13 @@ public class HelloRestController {
     @RequestMapping("/hello")
     public SysUsers restHello(){
         return  sysUsersService.selectByPrimaryKey(111);
+    }
+
+    @RequestMapping("/getHttp")
+    public String getHttp() throws Exception {
+        HttpUtils httpUtils=new HttpUtils();
+        HttpResponse re=httpUtils.sendGet("http://localhost:8081/rest/hello");
+        return re.content;
     }
 
     @RequestMapping("/getPro")
