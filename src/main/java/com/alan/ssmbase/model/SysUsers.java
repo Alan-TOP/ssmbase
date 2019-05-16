@@ -1,5 +1,7 @@
 package com.alan.ssmbase.model;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+
 import java.util.Date;
 
 public class SysUsers {
